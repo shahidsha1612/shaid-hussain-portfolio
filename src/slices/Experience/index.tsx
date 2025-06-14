@@ -62,12 +62,9 @@ const Experience = ({ slice }: ExperienceProps) => {
               end: "50% 100%",
               scrub: 4,
               onEnter: () => {
-                console.log("Element entered viewport");
-                // Your enter logic here
                 audioRef.current?.play();              },
 
               onLeave: () => {
-                console.log("Element left viewport (scrolling down)");
                 audioRef.current?.pause();              },
             },
           },
