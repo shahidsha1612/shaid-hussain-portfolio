@@ -90,6 +90,13 @@
           "allowText": true,
           "repeat": false
         }
+      },
+      "slogan": {
+        "type": "Text",
+        "config": {
+          "label": "Slogan",
+          "placeholder": ""
+        }
       }
     },
     "SEO and MetaData": {

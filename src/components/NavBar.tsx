@@ -1,7 +1,7 @@
 "use client";
 
 import clsx from "clsx";
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Content, KeyTextField, asLink } from "@prismicio/client";
 import { PrismicNextLink } from "@prismicio/next";
 import Link from "next/link";
@@ -16,7 +16,8 @@ export default function NavBar({
 }) {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
-
+ 
+   
   return (
     <nav aria-label="Main navigation">
       <ul className="flex flex-col justify-between rounded-b-lg bg-slate-50 px-4 py-2 md:m-4 md:flex-row md:items-center md:rounded-xl">
@@ -96,11 +97,28 @@ export default function NavBar({
 }
 
 function NameLogo({ name }: { name: KeyTextField }) {
+  const soundEffectsRef = useRef<HTMLAudioElement | null>(null);
+
+  useEffect(() => {
+    // Create audio object only on client side
+    if (typeof window !== 'undefined') {
+      soundEffectsRef.current = new Audio("/sounds/knock3.ogg");
+    }
+  }, []);
+
+  const playSound = () => {
+    if (soundEffectsRef.current) {
+      soundEffectsRef.current.currentTime = 0; // Reset to beginning
+      soundEffectsRef.current.play().catch(console.error);
+    }
+  };
+
   return (
     <Link
       href="/"
       aria-label="Home page"
       className="text-xl font-extrabold tracking-tighter text-slate-900"
+      onClick={playSound}
     >
       {name}
     </Link>
@@ -114,6 +132,22 @@ function DesktopMenu({
   settings: Content.SettingsDocument;
   pathname: string;
 }) {
+  const soundEffectsRef = useRef<HTMLAudioElement | null>(null);
+
+  useEffect(() => {
+    // Create audio object only on client side
+    if (typeof window !== 'undefined') {
+      soundEffectsRef.current = new Audio("/sounds/knock1.ogg");
+    }
+  }, []);
+
+  const playSound = () => {
+    if (soundEffectsRef.current) {
+      soundEffectsRef.current.currentTime = 0; // Reset to beginning
+      soundEffectsRef.current.play().catch(console.error);
+    }
+  };
+
   return (
     <div className="relative z-50 hidden flex-row items-center gap-1 bg-transparent py-0 md:flex">
       {settings.data.nav_item.map(({ link, label }, index) => (
@@ -127,6 +161,7 @@ function DesktopMenu({
               aria-current={
                 pathname.includes(asLink(link) as string) ? "page" : undefined
               }
+              onClick={playSound}
             >
               <span
                 className={clsx(

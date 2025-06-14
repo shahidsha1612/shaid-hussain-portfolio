@@ -27,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="bg-slate-900 text-slate-100">
+    <html lang="en" className="bg-[oklch(0.17_0.05_263.3)] text-slate-100">
       <body
         className={clsx(urbanist.className,"relative min-h-screen")}
       >

@@ -44,6 +44,23 @@ interface BlogPostDocumentData {
   hover_image: prismic.ImageField<never>;
 
   /**
+   * Blog Link field in *Blog Post*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_post.blog_link
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  blog_link: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+
+  /**
    * Slice Zone field in *Blog Post*
    *
    * - **Field Type**: Slice Zone
@@ -272,6 +289,23 @@ interface ProjectDocumentData {
   hover_image: prismic.ImageField<never>;
 
   /**
+   * Project Link field in *Project*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.project_link
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  project_link: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+
+  /**
    * Slice Zone field in *Project*
    *
    * - **Field Type**: Slice Zone
@@ -452,7 +486,18 @@ interface SettingsDocumentData {
     unknown,
     prismic.FieldState,
     never
-  > /**
+  >;
+
+  /**
+   * Slogan field in *Settings*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.slogan
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  slogan: prismic.KeyTextField /**
    * Meta Title field in *Settings*
    *
    * - **Field Type**: Text
@@ -698,6 +743,16 @@ export interface ExperienceSliceDefaultPrimaryExpItem {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   company_title: prismic.KeyTextField;
+
+  /**
+   * Company Name field in *Experience → Default → Primary → Exp*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: experience.default.primary.exp[].company_name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  company_name: prismic.KeyTextField;
 
   /**
    * Time Period field in *Experience → Default → Primary → Exp*

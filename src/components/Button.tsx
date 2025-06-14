@@ -1,3 +1,4 @@
+"use client";
 import { PrismicNextLink } from "@prismicio/next";
 import React from "react";
 import { MdArrowOutward } from "react-icons/md";
@@ -17,9 +18,15 @@ export default function Button({
   showIcon = true,
   className,
 }: ButtonProps) {
+  const handleEmailClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    window.open("https://mail.google.com/mail/?view=cm&fs=1&to=shahidsha.1612@gmail.com", "_blank");
+  };
+
   return (
     <PrismicNextLink
       field={linkField}
+      onClick={handleEmailClick}
       className={clsx(
         "group relative flex w-fit items-center justify-center overflow-hidden rounded-md border-2 border-slate-900 bg-slate-50  px-4 py-2 font-bold transition-transform ease-out  hover:scale-105 text-slate-800",
         className,

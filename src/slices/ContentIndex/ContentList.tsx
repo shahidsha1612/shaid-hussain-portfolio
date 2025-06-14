@@ -6,6 +6,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { MdArrowOutward } from "react-icons/md";
 import { Content } from "@prismicio/client";
+import { PrismicLink } from "@prismicio/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -30,7 +31,6 @@ export default function ContentList({
   const [hovering, setHovering] = useState(false);
   const lastMousePos = useRef({ x: 0, y: 0 });
 
-  const urlPrefix = contentType === "Blog" ? "/blog" : "/project";
 
   useEffect(() => {
     // Animate list-items in with a stagger
@@ -132,6 +132,7 @@ export default function ContentList({
     });
   }, [contentImages]);
 
+  
   return (
     <>
       <ul
@@ -146,8 +147,13 @@ export default function ContentList({
             onMouseEnter={() => onMouseEnter(index)}
             className="list-item opacity-0"
           >
-            <a
-              href={`${urlPrefix}/${post.uid}`}
+            <PrismicLink
+            target="_blank"
+              href={
+                contentType === "Project" && "project_link" in post.data
+                  ? post.data?.project_link?.url
+                  : post.data?.blog_link?.url
+              }
               className="flex flex-col justify-between border-t border-t-slate-100 py-10 text-slate-200 md:flex-row"
               aria-label={post.data.title || ""}
             >
@@ -164,7 +170,7 @@ export default function ContentList({
               <span className="ml-auto flex items-center gap-2 text-xl font-medium md:ml-0">
                 {viewMoreText} <MdArrowOutward />
               </span>
-            </a>
+            </PrismicLink>
           </li>
         ))}
 

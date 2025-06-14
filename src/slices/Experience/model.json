@@ -32,6 +32,13 @@
                   "placeholder": ""
                 }
               },
+              "company_name": {
+                "type": "Text",
+                "config": {
+                  "label": "Company Name",
+                  "placeholder": ""
+                }
+              },
               "time_period": {
                 "type": "Text",
                 "config": {

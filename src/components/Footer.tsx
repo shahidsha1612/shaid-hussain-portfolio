@@ -18,7 +18,7 @@ export default async function Footer() {
             href="/"
             className="text-xl font-extrabold tracking-tighter text-slate-100 transition-colors duration-150 hover:text-yellow-400"
           >
-            {settings.data.name}
+            {settings.data.slogan}
           </Link>
           <span
             className="hidden text-5xl font-extralight leading-[0] text-slate-400 sm:inline"
@@ -27,7 +27,7 @@ export default async function Footer() {
             /
           </span>
           <p className=" text-sm text-slate-300 ">
-            © {new Date().getFullYear()} {settings.data.name}
+            © {new Date().getFullYear()} Based In United Kingdom
           </p>
         </div>
         <nav className="navigation" aria-label="Footer Navigation">

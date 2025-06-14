@@ -43,6 +43,14 @@
 										}
 									]
 								}
+							],
+							[
+								"company_name",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "did",
+									"type": "Text"
+								}
 							]
 						]
 					}
