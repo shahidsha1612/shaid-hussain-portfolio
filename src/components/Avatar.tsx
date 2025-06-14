@@ -74,7 +74,7 @@ export default function Avatar({ image, className }: AvaatarProps) {
         <PrismicNextImage
           alt=""
           field={image}
-          className="row-start-1 max-w-sm md:col-start-2 md:row-end-3"
+          className="row-start-1  md:col-start-2 md:row-end-3"
           imgixParams={{ q: 90 }}
         />
         <div className="highlight absolute inset-0 hidden w-full scale-110 bg-gradient-to-tr from-transparent via-white to-transparent opacity-0 md:block"></div>
