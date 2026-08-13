@@ -1,5 +1,30 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
+
+@theme {
+  --color-surface-page: #0d1730;
+  --color-surface-card: #16223f;
+  --color-surface-card-hover: #1a2848;
+  --color-surface-tile: #22314f;
+  --color-surface-pill: #1c3040;
+  --color-text-primary: #eef2fa;
+  --color-text-muted: #8fa0c4;
+  --color-accent-mint: #9fe1cb;
+  --color-accent-live: #5dcaa5;
+
+  --animate-pulse-dot: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
 .background-gradient {
     background: radial-gradient(
       circle at top center,

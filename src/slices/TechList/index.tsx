@@ -8,6 +8,7 @@ import { MdCircle } from "react-icons/md";
 import Bounded from "@/components/Bounded";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
+import { techStack } from "@/data/techStack";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -18,6 +19,7 @@ export type TechListProps = SliceComponentProps<Content.TechListSlice>;
  */
 const TechList: FC<TechListProps> = ({ slice }) => {
   const component = useRef(null);
+  const techList = [...techStack, ...slice.primary.tech_list];
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
@@ -61,12 +63,12 @@ const TechList: FC<TechListProps> = ({ slice }) => {
       className="overflow-hidden"
       ref={component}
     >
-      <Bounded as="div">
+      <Bounded as="div" className="py-10 md:py-14 lg:py-16">
         <Heading size="xl" as="h2">
           {slice.primary.heading}
         </Heading>
       </Bounded>
-      {slice.primary.tech_list.map(({ tech_color, tech_name }, index) => (
+      {techList.map(({ tech_color, tech_name }, index) => (
         <div
           key={index}
           className="tech-row mb-8 flex items-center justify-center gap-4 text-slate-700"

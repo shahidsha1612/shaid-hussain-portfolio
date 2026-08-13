@@ -22,7 +22,7 @@ export const renderLetters = (name: KeyTextField, key: string) => {
       key={index}
       className={`name-animation name animation-${key} inline-block opacity-0`}
     >
-      {letter}
+      {letter === " " ? " " : letter}
     </span>
   ));
 };
@@ -79,8 +79,9 @@ const Hero: FC<HeroProps> = ({ slice }) => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
       ref={components}
+      className="py-10 md:py-14 lg:py-16"
     >
-      <div className="grid min-h-[70vh] grid-cols-1 md:grid-cols-2 items-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 items-center">
       <Shapes />
         <div className="col-start-1 min-w-0 md:row-start-1">
           <h1

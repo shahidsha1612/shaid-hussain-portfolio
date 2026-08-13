@@ -41,20 +41,19 @@ function Geometries() {
     {
       position: [2, 1, 0],
       r: 0.4,
-      scale:0.05,
-      glbPath: "/next.glb", //
+      scale:1,
+      glbPath: "/shield_protection_icon.glb", //
     },
     {
       position: [0.5  , -0.75, 2],
       r: 0.3,
       scale:1,
       glbPath: "/react.glb", //
-    },
-    {
+    },{
       position: [-1.4, 1  , -4],
       r: 0.6,
       scale:1.2,
-      glbPath: "/tailwind.glb", //
+      glbPath: "/certificate.glb", //
     },
     {
       position: [1, -0.9, 4],
@@ -68,8 +67,6 @@ function Geometries() {
       scale:0.03,
       glbPath: "/node.glb", //
     },
-   
-
   ];
   const materials = [
     new THREE.MeshStandardMaterial({ color: 0x00FFFF, roughness: 0.1 }),
