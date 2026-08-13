@@ -5,7 +5,7 @@ import { PrismicNextLink } from "@prismicio/next";
 import Link from "next/link";
 import Bounded from "@/components/Bounded";
 import { isFilled } from "@prismicio/client";
-import { FaGithub, FaTwitter, FaLinkedin } from "react-icons/fa6";
+import { FaGithub, FaTwitter, FaLinkedin, FaFileArrowDown } from "react-icons/fa6";
 
 export default async function Footer() {
   const client = createClient();
@@ -57,6 +57,14 @@ export default async function Footer() {
           </ul>
         </nav>
         <div className="socials inline-flex justify-center sm:justify-end">
+          <a
+            href="/resume.pdf"
+            download="Shaid Hussain - Resume.pdf"
+            className="p-2 text-2xl text-slate-300 transition-all duration-150 hover:scale-125 hover:text-yellow-400"
+            aria-label="Download Shaid Hussain's resume"
+          >
+            <FaFileArrowDown />
+          </a>
           {isFilled.link(settings.data.github) && (
             <PrismicNextLink
               field={settings.data.github}
