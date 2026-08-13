@@ -69,7 +69,7 @@ export const experience: WorkExperienceItem[] = [
   {
     title: "Product Developer",
     company: "Lumel",
-    location: "India",
+    location: "",
     startDate: "2022-01",
     endDate: "2023-09",
     initials: "LU",
@@ -82,7 +82,7 @@ export const experience: WorkExperienceItem[] = [
   {
     title: "Frontend Developer",
     company: "Flyers Soft",
-    location: "India",
+    location: "",
     startDate: "2021-01",
     endDate: "2022-01",
     initials: "FS",
