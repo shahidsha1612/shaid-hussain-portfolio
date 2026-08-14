@@ -126,17 +126,17 @@ export default function ExperienceEntry({
       <div className="flex flex-wrap items-center gap-3.5 sm:flex-nowrap">
         <div className="flex min-w-0 flex-1 items-center gap-3.5">
 
-          <div className="min-w-0 flex items-center gap-2.5">
+          <div className="min-w-0 flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-2.5">
             {company && (
-              <h3 className="text-2xl font-semibold  text-text-muted">
+              <h3 className="text-xl font-semibold text-text-muted sm:text-2xl">
               {renderLetters(
                 location ? `${company} · (${location})` : company,
                 animationKey,
               )}{" "}
-              -
+              <span className="hidden sm:inline">-</span>
               </h3>
             )}
-            <p className="text-2xl font-bold text-text-primary ">
+            <p className="text-xl font-bold text-text-primary sm:text-2xl">
                 {renderLetters(title, animationKey)}
             </p>
           </div>

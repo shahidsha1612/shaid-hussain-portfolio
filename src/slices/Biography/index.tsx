@@ -29,7 +29,7 @@ const Biography: FC<BiographyProps> = ({ slice }) => {
           <PrismicRichText field={slice.primary.description}/>
         </div>
         <Button linkField={slice.primary.button_link} label={slice.primary.button_text}/>
-        <Avatar image={slice.primary.avatar} className="row-start-1 max-w-sm md:col-start-2 md:row-end-3"/>
+        <Avatar image={slice.primary.avatar} className="max-w-sm md:col-start-2 md:row-start-1 md:row-end-3"/>
       </div>
     </Bounded>
   );
