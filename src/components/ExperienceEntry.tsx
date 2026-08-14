@@ -142,27 +142,29 @@ export default function ExperienceEntry({
           </div>
         </div>
 
-        <span className="inline-flex flex-none items-center gap-1.5 whitespace-nowrap rounded-full bg-surface-pill px-2.5 py-1 text-1xl text-[#ffdf20]">
-          {current && (
-            <span
-              aria-hidden="true"
-              className="size-1.5 flex-none rounded-full bg-accent-live animate-pulse-dot motion-reduce:animate-none"
-            />
-          )}
-          {startDate ? (
-            <>
-              <time dateTime={startDate}>{formatMonthYear(startDate)}</time>
-              <span aria-hidden="true">–</span>
-              {endDate ? (
-                <time dateTime={endDate}>{endLabel}</time>
-              ) : (
-                <span>{endLabel}</span>
-              )}
-            </>
-          ) : (
-            <span>{dateLabel}</span>
-          )}
-        </span>
+        <div className="w-full sm:w-auto sm:flex-none">
+          <span className="inline-flex items-center gap-1.5 whitespace-nowrap rounded-full bg-surface-pill px-2.5 py-1 text-1xl text-[#ffdf20]">
+            {current && (
+              <span
+                aria-hidden="true"
+                className="size-1.5 flex-none rounded-full bg-accent-live animate-pulse-dot motion-reduce:animate-none"
+              />
+            )}
+            {startDate ? (
+              <>
+                <time dateTime={startDate}>{formatMonthYear(startDate)}</time>
+                <span aria-hidden="true">–</span>
+                {endDate ? (
+                  <time dateTime={endDate}>{endLabel}</time>
+                ) : (
+                  <span>{endLabel}</span>
+                )}
+              </>
+            ) : (
+              <span>{dateLabel}</span>
+            )}
+          </span>
+        </div>
       </div>
 
       <div className="prose prose-lg prose-invert mt-4 max-w-none">
